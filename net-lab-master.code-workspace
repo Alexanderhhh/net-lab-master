@@ -10,7 +10,10 @@
 		"files.associations": {
 			"arp.h": "c",
 			"driver.h": "c",
-			"ethernet.h": "c"
+			"ethernet.h": "c",
+			"ip.h": "c",
+			"utils.h": "c",
+			"net.h": "c"
 		}
 	}
 }
