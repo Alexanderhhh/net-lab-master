@@ -33,8 +33,8 @@ void ethernet_out(buf_t *buf, const uint8_t *mac, net_protocol_t protocol)
 {
     // TO-DO
     // 首先判断数据长度，如果不足46则显式填充0
-    if (buf->len < 46)
-        buf_add_padding(buf, 46 - buf->len);
+    if (buf->len < ETHERNET_MIN_TRANSPORT_UNIT)
+        buf_add_padding(buf, ETHERNET_MIN_TRANSPORT_UNIT - buf->len);
     // 调用buf_add_header()函数添加以太网包头
     buf_add_header(buf, sizeof(ether_hdr_t));
     ether_hdr_t *hdr = (ether_hdr_t *)buf->data;
