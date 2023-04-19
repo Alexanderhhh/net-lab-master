@@ -13,7 +13,9 @@ void ethernet_in(buf_t *buf)
     // TO-DO
     // 首先判断数据长度，如果数据长度小于以太网头部长度，则认为数据包不完整，丢弃不处理
     if (buf->len < sizeof(ether_hdr_t))
+    {
         return;
+    }
     // 获取以太网包头数据并移除以太网包头
     ether_hdr_t *hdr = (ether_hdr_t *)buf->data;
     uint8_t *src = hdr->src;
@@ -34,7 +36,9 @@ void ethernet_out(buf_t *buf, const uint8_t *mac, net_protocol_t protocol)
     // TO-DO
     // 首先判断数据长度，如果不足46则显式填充0
     if (buf->len < ETHERNET_MIN_TRANSPORT_UNIT)
+    {
         buf_add_padding(buf, ETHERNET_MIN_TRANSPORT_UNIT - buf->len);
+    }
     // 调用buf_add_header()函数添加以太网包头
     buf_add_header(buf, sizeof(ether_hdr_t));
     ether_hdr_t *hdr = (ether_hdr_t *)buf->data;

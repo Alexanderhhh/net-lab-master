@@ -6,16 +6,10 @@
             "type": "cppdbg",
             "request": "launch",
             //“program”和“args”则要根据你当前需要调试的实验进行修改。
-            "program": "${workspaceFolder}\\build\\eth_in.exe",
+            "program": "${workspaceFolder}\\build\\arp_test.exe",
             "args": [
-                "testing\\data\\eth_in"
+                "testing\\data\\arp_test"
             ],
-            // eth_in ：
-            // "program": "${workspaceFolder}\\build\\eth_in.exe",
-            // "args": ["testing\\data\\eth_in"],
-            // eth_out ：
-            // "program": "${workspaceFolder}\\build\\eth_out.exe",
-            // "args": ["testing\\data\\eth_out"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
