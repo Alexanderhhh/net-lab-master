@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20230615-1424-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.26.1"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="DESKTOP-983RAFF"
+	OSRelease=" Personal"
+	OSVersion=" (Build 22621)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="10"
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="20"
+	NumberOfPhysicalCPU="14"
+	TotalVirtualMemory="19376"
+	TotalPhysicalMemory="16176"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="2995"
+	>
+	<Testing>
+		<StartDateTime>Jun 15 22:24 [NON-UTF-8-BYTE-0xD6]й[NON-UTF-8-BYTE-0xFA][NON-UTF-8-BYTE-0xB1][NON-UTF-8-BYTE-0xEA]׼ʱ[NON-UTF-8-BYTE-0xBC][NON-UTF-8-BYTE-0xE4]</StartDateTime>
+		<StartTestTime>1686839064</StartTestTime>
+		<TestList/>
+		<EndDateTime>Jun 15 22:24 [NON-UTF-8-BYTE-0xD6]й[NON-UTF-8-BYTE-0xFA][NON-UTF-8-BYTE-0xB1][NON-UTF-8-BYTE-0xEA]׼ʱ[NON-UTF-8-BYTE-0xBC][NON-UTF-8-BYTE-0xE4]</EndDateTime>
+		<EndTestTime>1686839064</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

@@ -3,7 +3,7 @@
 #include <string.h>
 /**
  * @brief ip转字符串
- * 
+ *
  * @param ip ip地址
  * @return char* 生成的字符串
  */
@@ -16,7 +16,7 @@ char *iptos(uint8_t *ip)
 
 /**
  * @brief mac转字符串
- * 
+ *
  * @param mac mac地址
  * @return char* 生成的字符串
  */
@@ -29,7 +29,7 @@ char *mactos(uint8_t *mac)
 
 /**
  * @brief 时间戳转字符串
- * 
+ *
  * @param timestamp 时间戳
  * @return char* 生成的字符串
  */
@@ -46,7 +46,7 @@ char *timetos(time_t timestamp)
 
 /**
  * @brief ip前缀匹配
- * 
+ *
  * @param ipa 第一个ip
  * @param ipb 第二个ip
  * @return uint8_t 两个ip相同的前缀长度
@@ -70,7 +70,7 @@ uint8_t ip_prefix_match(uint8_t *ipa, uint8_t *ipb)
 
 /**
  * @brief 计算16位校验和
- * 
+ *
  * @param buf 要计算的数据包
  * @param len 要计算的长度
  * @return uint16_t 校验和
@@ -78,4 +78,24 @@ uint8_t ip_prefix_match(uint8_t *ipa, uint8_t *ipb)
 uint16_t checksum16(uint16_t *data, size_t len)
 {
     // TO-DO
+    uint8_t *ptr = (uint8_t *)data;
+    uint32_t tmp = 0;
+    int i = 0;
+    // 把data看成是每16个bit（即2个字节）组成一个数，相加
+    for (i = 0; i + 1 < len; i += 2)
+    {
+        tmp += (ptr[i] << 8) + ptr[i + 1];
+        while ((tmp >> 16) > 0)
+            tmp = (tmp & 0xFFFF) + (tmp >> 16);
+    }
+    if (len > i)
+    {
+        tmp += (ptr[i] << 8);
+        // 判断相加后32bit结果值的高16位是否为0，
+        // 如果不为0，则将高16位和低16位相加，依次循环，直至高16位为0为止。
+        while ((tmp >> 16) > 0)
+            tmp = (tmp & 0xFFFF) + (tmp >> 16);
+    }
+    // 将上述的和（低16位）取反，即得到校验和。
+    return ~(uint16_t)tmp;
 }
